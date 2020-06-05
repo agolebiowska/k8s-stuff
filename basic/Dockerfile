@@ -1,7 +1,7 @@
 FROM golang:1.13-alpine AS builder
 ENV GO111MODULE=on
 WORKDIR /go/src/app
-COPY . .
+COPY .. .
 RUN go get ./...
 RUN GOOS=linux GOARCH=amd64 go build main.go
 FROM golang:1.13-alpine
